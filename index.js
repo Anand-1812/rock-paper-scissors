@@ -7,22 +7,49 @@ function isWin(player, computer) {
     return false
 }
 
-function play() {
-    let userInt = prompt("Enter you choice 0 for rock, 1 for paper and 2 for scissors: ")
-    let userChoice = options[userInt];
+function play(userChoice) {
+
+    const result = document.querySelector("#result");
+
+    let gameResult;
 
     let number = Math.floor(Math.random() * 3)
     let computerChoice = options[number]
 
     if (userChoice == computerChoice) {
-        return "It's a draw";
+        console.log("It's a draw")
+        gameResult = "It's a draw";
     }
 
     if (isWin(userChoice, computerChoice)) {
-        console.log(`You choose ${userChoice} and computer choose ${computerChoice}, you won`);
+        gameResult = `You won!`;
+    } else {
+        gameResult  = `You Lost`;
     }
-    
-    console.log(`You choose ${userChoice} and computer choose ${computerChoice}, you lost`);
+
+    const para = document.createElement("p");
+    const node = document.createTextNode(gameResult);
+    para.appendChild(node);
+    const element = document.getElementById("result");
+
+    element.appendChild(para);
+ 
 }
 
-play()
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+rock.addEventListener("click", (e) => {
+    play("rock")
+});
+
+
+paper.addEventListener("click", (e) => {
+    play("paper")
+});
+
+
+scissors.addEventListener("click", (e) => {
+    play("scissors");
+});
