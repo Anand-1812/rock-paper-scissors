@@ -50,3 +50,15 @@ paper.addEventListener("click", (e) => {
 scissors.addEventListener("click", (e) => {
     play("scissors");
 });
+
+console.log(document.querySelector("#start-game"));
+
+document.addEventListener("DOMContentLoaded", () => {
+    const option = document.querySelector("#option-text");
+    const start = document.querySelector("#start-game");
+
+    start.addEventListener("click", () => {
+        option.textContent = "Choose an option";
+        console.log("Game started");
+    });
+});

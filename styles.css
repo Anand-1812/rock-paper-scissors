@@ -18,6 +18,13 @@ h1 a {
     color: inherit;
 }
 
+#option-text {
+    font-family: inherit;
+    position: relative;
+    left: 22%;
+    top: 108px;
+}
+
 #container {
     margin: 20px;
     padding: 20px;
@@ -115,10 +122,9 @@ img {
 }
 
 #start-game:active {
-    background-color: #3e8e41;
     transform: scale(0.95);
 }
-
+/* 
 @media screen and (max-width: 768px) {
     #container {
         flex-direction: column;
@@ -128,4 +134,4 @@ img {
     #start-game {
         bottom: 10px;
     }
-}
+} */
