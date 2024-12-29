@@ -1,39 +1,36 @@
 const options = ["rock", "paper", "scissors"]
 
 function isWin(player, computer) {
-    if ((player == "rock" && computer == "scissors") || (player == "scissors" && computer == "paper") || player == "paper" && computer == "rock") {
-        return true
-    }
-    return false
+    return (
+        (player == "rock" && computer == "scissors") || 
+        (player == "scissors" && computer == "paper") || 
+        (player == "paper" && computer == "rock")
+    );
 }
 
 function play(userChoice) {
-
-    const result = document.querySelector("#result");
 
     let gameResult;
 
     let number = Math.floor(Math.random() * 3)
     let computerChoice = options[number]
 
-    if (userChoice == computerChoice) {
-        console.log("It's a draw")
-        gameResult = "It's a draw";
-    }
+    console.log(document.querySelector(".img2").setAttribute("src", `./images/${computerChoice}.png `))
 
-    if (isWin(userChoice, computerChoice)) {
+    if (userChoice === computerChoice) {
+        gameResult = "It's a draw";
+    } else if (isWin(userChoice, computerChoice)) {
         gameResult = `You won!`;
     } else {
-        gameResult  = `You Lost`;
+        gameResult  = `You Lost!`;
     }
 
-    const para = document.createElement("p");
-    const node = document.createTextNode(gameResult);
-    para.appendChild(node);
-    const element = document.getElementById("result");
+    const resultContainer = document.getElementById("result");
+    resultContainer.innerHTML = "";
 
-    element.appendChild(para);
- 
+    const para = document.createElement("p");
+    para.textContent = gameResult;
+    resultContainer.appendChild(para);
 }
 
 const rock = document.querySelector("#rock");

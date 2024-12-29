@@ -1,35 +1,30 @@
-body h1 {
+body {
     margin: 0;
     padding: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 h1 {
+    margin: 0;
+    padding: 0;
     text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: "Poppins", serif;
 }
 
 h1 a {
-    font-family: "Poppins", serif;
     text-decoration: none;
-}
-
-
-#container button img {
-    width: rem;
-    height: 5rem;
-    object-fit: contain;
-}
-
-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+    color: inherit;
 }
 
 #container {
-    margin: 28px;
+    margin: 20px;
+    padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;  
+    justify-content: space-evenly;
     gap: 20px;
     height: 50vh;
 }
@@ -37,45 +32,74 @@ button {
 #choices {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 15px;
 }
 
-#result {
-    text-align: center;
-    font-size: 1.5rem;
-    background-color: #f3f3f3;
-    padding: 10px 20px;
-    border-radius: 5px;
+button {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#computer-choice {
-    text-align: center;
-    font-size: 1.2rem;
-    background-color: #eaf2f8;
-    padding: 10px 20px;
-    border-radius: 5px;
+button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+button:active {
+    background-color: #d0d0d0;
+    transform: scale(0.9);
 }
 
 #choices button {
     width: 100px;
     height: 100px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
 }
 
-#choices button img {
+img {
     width: 5rem;
     height: 5rem;
     object-fit: contain;
+    border: none;
+}
+
+.img2 {
+    width: 100px;
+    height: 150px;
+    background-color: transparent;
+    border: none !important; 
+    object-fit: contain;
+    box-shadow: none;
+}
+
+#container button img {
+    width: auto;
+    height: 5rem;
+}
+
+#result, #computer-choice {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+#computer-choice {
+    font-size: 1.2rem;
+    border-radius: 5px;
 }
 
 #start-game {
     position: fixed;
     bottom: 15px;
-    left: 45%;
-    font-size: 28px;
-    padding: 15px 30px;
+    left: 47%;
+    font-size: 24px;
+    padding: 10px 20px;
     background-color: black;
     color: white;
     border: none;
@@ -93,4 +117,15 @@ button {
 #start-game:active {
     background-color: #3e8e41;
     transform: scale(0.95);
+}
+
+@media screen and (max-width: 768px) {
+    #container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #start-game {
+        bottom: 10px;
+    }
 }
